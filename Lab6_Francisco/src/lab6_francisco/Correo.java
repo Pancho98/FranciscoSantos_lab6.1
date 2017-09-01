@@ -55,6 +55,27 @@ public class Correo extends javax.swing.JFrame {
         pf_contraseña = new javax.swing.JPasswordField();
         Registrar = new javax.swing.JButton();
         jMenu1 = new javax.swing.JMenu();
+        jd_buzon = new javax.swing.JDialog();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jm_modificar = new javax.swing.JMenuItem();
+        jd_modificar = new javax.swing.JDialog();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        tf_nombre1 = new javax.swing.JTextField();
+        tf_apellido1 = new javax.swing.JTextField();
+        tf_correo1 = new javax.swing.JTextField();
+        tf_telefono1 = new javax.swing.JTextField();
+        tf_pais1 = new javax.swing.JTextField();
+        jc_fecha1 = new com.toedter.calendar.JDateChooser();
+        pf_contraseña1 = new javax.swing.JPasswordField();
+        jb_modificar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         CrearCuenta = new javax.swing.JButton();
@@ -236,6 +257,157 @@ public class Correo extends javax.swing.JFrame {
 
         jMenu1.setText("jMenu1");
 
+        jMenu5.setText("Opciones");
+
+        jm_modificar.setText("Modificar");
+        jm_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_modificarActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jm_modificar);
+
+        jMenuBar2.add(jMenu5);
+
+        jd_buzon.setJMenuBar(jMenuBar2);
+
+        javax.swing.GroupLayout jd_buzonLayout = new javax.swing.GroupLayout(jd_buzon.getContentPane());
+        jd_buzon.getContentPane().setLayout(jd_buzonLayout);
+        jd_buzonLayout.setHorizontalGroup(
+            jd_buzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_buzonLayout.setVerticalGroup(
+            jd_buzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Modificar");
+
+        jLabel15.setText("Nombre");
+
+        jLabel16.setText("Apellido");
+
+        jLabel17.setText("Correo");
+
+        jLabel18.setText("Fecha de Nacimiento");
+
+        jLabel19.setText("Telefono");
+
+        jLabel20.setText("Pais");
+
+        jLabel21.setText("Contraseña");
+
+        tf_nombre1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_nombre1ActionPerformed(evt);
+            }
+        });
+
+        tf_telefono1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_telefono1ActionPerformed(evt);
+            }
+        });
+
+        jb_modificar.setText("Modificar");
+        jb_modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_modificarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jb_modificarMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_modificarLayout = new javax.swing.GroupLayout(jd_modificar.getContentPane());
+        jd_modificar.getContentPane().setLayout(jd_modificarLayout);
+        jd_modificarLayout.setHorizontalGroup(
+            jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificarLayout.createSequentialGroup()
+                .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jd_modificarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_modificarLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tf_apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tf_correo1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jd_modificarLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel16))
+                        .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_modificarLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jd_modificarLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_telefono1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(tf_pais1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jd_modificarLayout.createSequentialGroup()
+                            .addGap(92, 92, 92)
+                            .addComponent(jLabel18)
+                            .addGap(18, 18, 18)
+                            .addComponent(jc_fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jd_modificarLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel17)
+                            .addGap(145, 145, 145)
+                            .addComponent(jLabel21)
+                            .addGap(18, 18, 18)
+                            .addComponent(pf_contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(jd_modificarLayout.createSequentialGroup()
+                .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_modificarLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jb_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_modificarLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jd_modificarLayout.setVerticalGroup(
+            jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tf_nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_telefono1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tf_apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20)
+                    .addComponent(tf_pais1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(tf_correo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21)
+                    .addComponent(pf_contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jd_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(jc_fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jb_modificar, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -403,11 +575,62 @@ public class Correo extends javax.swing.JFrame {
                 login=false;
             }
         }
+        if (login ==true) {
+            jd_buzon.pack();
+            jd_buzon.setModal(true);
+            jd_buzon.setVisible(true);
+            jd_buzon.setLocationRelativeTo(this);
+        }
     }//GEN-LAST:event_jb_loginMouseClicked
 
     private void ev_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ev_correoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ev_correoActionPerformed
+
+    private void jm_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_modificarActionPerformed
+        jd_modificar.pack();
+        jd_modificar.setModal(true);
+        jd_modificar.setVisible(true);
+        jd_modificar.setLocationRelativeTo(this);
+    }//GEN-LAST:event_jm_modificarActionPerformed
+
+    private void tf_telefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_telefono1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_telefono1ActionPerformed
+
+    private void tf_nombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombre1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_nombre1ActionPerformed
+
+    private void jb_modificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarMouseEntered
+
+    }//GEN-LAST:event_jb_modificarMouseEntered
+
+    private void jb_modificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarMouseClicked
+        String nombre, apellido,correo,pais,telefono,contraseña;
+        Date fechaN;
+        if (tf_nombre1==null ) {
+            
+        }
+        if (tf_apellido1==null ) {
+            
+        }
+        if (tf_correo1==null ) {
+            
+        }
+        if (tf_pais1==null ) {
+            
+        }
+        if (tf_telefono1==null ) {
+            
+        }
+        if (pf_contraseña1==null ) {
+            
+        }
+        if (jc_fecha1==null ) {
+            
+        }
+    }//GEN-LAST:event_jb_modificarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -463,7 +686,15 @@ public class Correo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -473,19 +704,32 @@ public class Correo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JButton jb_login;
+    private javax.swing.JButton jb_modificar;
     private com.toedter.calendar.JDateChooser jc_fecha;
+    private com.toedter.calendar.JDateChooser jc_fecha1;
+    private javax.swing.JDialog jd_buzon;
     private javax.swing.JDialog jd_crear;
     private javax.swing.JDialog jd_login;
+    private javax.swing.JDialog jd_modificar;
     private javax.swing.JMenuItem ji_login;
     private javax.swing.JMenuItem ji_user;
+    private javax.swing.JMenuItem jm_modificar;
     private javax.swing.JPasswordField pf_contraseña;
+    private javax.swing.JPasswordField pf_contraseña1;
     private javax.swing.JTextField tf_apellido;
+    private javax.swing.JTextField tf_apellido1;
     private javax.swing.JTextField tf_correo;
+    private javax.swing.JTextField tf_correo1;
     private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_nombre1;
     private javax.swing.JTextField tf_pais;
+    private javax.swing.JTextField tf_pais1;
     private javax.swing.JTextField tf_telefono;
+    private javax.swing.JTextField tf_telefono1;
     // End of variables declaration//GEN-END:variables
 ArrayList<String> correo=new ArrayList();
 ArrayList<Persona> persona=new ArrayList();

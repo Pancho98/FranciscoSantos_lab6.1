@@ -46,7 +46,7 @@ public class Buzon {
 
     @Override
     public String toString() {
-        return "Buzon{" + "emisor=" + emisor + '}';
+        return "emisor=" + emisor;
     }
     
     
