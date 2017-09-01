@@ -32,13 +32,45 @@ public class Administrador {
         this.archivo = archivo;
     }
     
-    public void CrearCarpeta(String Nombre){
+    public void CrearCarpeta(String Nombre) throws IOException{
         //crea Carpeta
         FileWriter fw = null;
         BufferedWriter bw =null;
-        File Carpeta = new File("./"+Nombre);
+        File Carpeta = new File("./usuarios"+Nombre);
         Carpeta.mkdir();
-        File enviados = new File("./"+Nombre+"/enviados.txt");
-        
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Leido"+"txt");
+        bw = new BufferedWriter(fw);
+        bw.write("");
+        bw.flush();
+        //
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"No Leidos"+"txt");
+        bw = new BufferedWriter(fw);
+        bw.write("");
+        bw.flush();
+        //
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Borrador"+"txt");
+        bw = new BufferedWriter(fw);
+        bw.write("");
+        bw.flush();
+        //
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Spam"+"txt");
+        bw = new BufferedWriter(fw);
+        bw.write("");
+        bw.flush();
+        //
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Eliminados"+"txt");
+        bw = new BufferedWriter(fw);
+        bw.write("");
+        bw.flush();
+        //
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Enviado"+"txt");
+        bw = new BufferedWriter(fw);
+        bw.write("");
+        bw.flush();
+        //
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Importante"+"txt");
+        bw = new BufferedWriter(fw);
+        bw.write("");
+        bw.flush();
     }
 }

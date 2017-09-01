@@ -54,7 +54,15 @@ public class Correo extends javax.swing.JFrame {
         tf_pais = new javax.swing.JTextField();
         pf_contraseña = new javax.swing.JPasswordField();
         Registrar = new javax.swing.JButton();
+        jMenu1 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        CrearCuenta = new javax.swing.JButton();
+        LogIn = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        ji_login = new javax.swing.JMenuItem();
+        ji_user = new javax.swing.JMenuItem();
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -215,23 +223,81 @@ public class Correo extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jMenu1.setText("jMenu1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Bienvenidos");
+
+        CrearCuenta.setText("Crear Cuenta");
+        CrearCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearCuentaMouseClicked(evt);
+            }
+        });
+
+        LogIn.setText("Log In");
+        LogIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogInMouseClicked(evt);
+            }
+        });
+
+        jMenu4.setText("Opciones");
+
+        ji_login.setText("Log In");
+        ji_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ji_loginActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ji_login);
+
+        ji_user.setText("Crear Usuario");
+        ji_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ji_userActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ji_user);
+
+        jMenuBar1.add(jMenu4);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(199, 199, 199)
-                .addComponent(jLabel1)
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(199, 199, 199)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(CrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
+                .addGap(53, 53, 53)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(330, Short.MAX_VALUE))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
@@ -256,9 +322,11 @@ public class Correo extends javax.swing.JFrame {
             Date fechaN;
             //
             nombre=tf_nombre.getText();
+            ad.CrearCarpeta(nombre);
             apellido=tf_apellido.getText();
             if (Evaluar(tf_correo.getText())==false) {
                 JOptionPane.showMessageDialog(this, "El Correo ya existe");
+                correo=null;
             }else{
                 correo=tf_correo.getText();
             }
@@ -266,10 +334,46 @@ public class Correo extends javax.swing.JFrame {
             pais=tf_pais.getText();
             telefono=tf_telefono.getText();
             contraseña=pf_contraseña.getText();
-            //persona.add(nombre,apellido,correo,fechaN,pais,telefono,contraseña);
+            persona.add(new Persona(nombre,apellido,correo,fechaN,pais,telefono,contraseña));
+            //
+            tf_nombre.setText("");
+            tf_apellido.setText("");
+            tf_correo.setText("");
+            jc_fecha.setDate(null);
+            tf_pais.setText("");
+            tf_telefono.setText("");
+            pf_contraseña.setText("");
         } catch (Exception e) {
         }
     }//GEN-LAST:event_RegistrarMouseClicked
+
+    private void ji_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ji_userActionPerformed
+        jd_crear.pack();
+        jd_crear.setModal(true);
+        jd_crear.setVisible(true);
+        jd_crear.setLocationRelativeTo(this);
+    }//GEN-LAST:event_ji_userActionPerformed
+
+    private void CrearCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearCuentaMouseClicked
+        jd_crear.pack();
+        jd_crear.setModal(true);
+        jd_crear.setVisible(true);
+        jd_crear.setLocationRelativeTo(this);
+    }//GEN-LAST:event_CrearCuentaMouseClicked
+
+    private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
+        jd_login.pack();
+        jd_login.setModal(true);
+        jd_login.setVisible(true);
+        jd_login.setLocationRelativeTo(this);
+    }//GEN-LAST:event_LogInMouseClicked
+
+    private void ji_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ji_loginActionPerformed
+        jd_login.pack();
+        jd_login.setModal(true);
+        jd_login.setVisible(true);
+        jd_login.setLocationRelativeTo(this);
+    }//GEN-LAST:event_ji_loginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,12 +419,15 @@ public class Correo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CrearCuenta;
+    private javax.swing.JButton LogIn;
     private javax.swing.JButton Registrar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -329,11 +436,16 @@ public class Correo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private com.toedter.calendar.JDateChooser jc_fecha;
     private javax.swing.JDialog jd_crear;
     private javax.swing.JDialog jd_login;
+    private javax.swing.JMenuItem ji_login;
+    private javax.swing.JMenuItem ji_user;
     private javax.swing.JPasswordField pf_contraseña;
     private javax.swing.JTextField tf_apellido;
     private javax.swing.JTextField tf_correo;
@@ -343,4 +455,5 @@ public class Correo extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 ArrayList<String> correo=new ArrayList();
 ArrayList<Persona> persona=new ArrayList();
+Administrador ad = new Administrador();
 }
