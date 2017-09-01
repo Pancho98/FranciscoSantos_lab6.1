@@ -38,37 +38,37 @@ public class Administrador {
         BufferedWriter bw =null;
         File Carpeta = new File("./usuarios"+Nombre);
         Carpeta.mkdir();
-        fw = new FileWriter("./usuarios"+Nombre+"/"+"Leido"+"txt");
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Leido"+".txt");
         bw = new BufferedWriter(fw);
         bw.write("");
         bw.flush();
         //
-        fw = new FileWriter("./usuarios"+Nombre+"/"+"No Leidos"+"txt");
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"No Leidos"+".txt");
         bw = new BufferedWriter(fw);
         bw.write("");
         bw.flush();
         //
-        fw = new FileWriter("./usuarios"+Nombre+"/"+"Borrador"+"txt");
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Borrador"+".txt");
         bw = new BufferedWriter(fw);
         bw.write("");
         bw.flush();
         //
-        fw = new FileWriter("./usuarios"+Nombre+"/"+"Spam"+"txt");
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Spam"+".txt");
         bw = new BufferedWriter(fw);
         bw.write("");
         bw.flush();
         //
-        fw = new FileWriter("./usuarios"+Nombre+"/"+"Eliminados"+"txt");
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Eliminados"+".txt");
         bw = new BufferedWriter(fw);
         bw.write("");
         bw.flush();
         //
-        fw = new FileWriter("./usuarios"+Nombre+"/"+"Enviado"+"txt");
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Enviado"+".txt");
         bw = new BufferedWriter(fw);
         bw.write("");
         bw.flush();
         //
-        fw = new FileWriter("./usuarios"+Nombre+"/"+"Importante"+"txt");
+        fw = new FileWriter("./usuarios"+Nombre+"/"+"Importante"+".txt");
         bw = new BufferedWriter(fw);
         bw.write("");
         bw.flush();

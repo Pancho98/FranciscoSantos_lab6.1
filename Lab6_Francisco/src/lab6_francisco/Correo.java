@@ -34,9 +34,9 @@ public class Correo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        ev_correo = new javax.swing.JTextField();
+        ev_contraseña = new javax.swing.JPasswordField();
+        jb_login = new javax.swing.JButton();
         jd_crear = new javax.swing.JDialog();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -72,7 +72,18 @@ public class Correo extends javax.swing.JFrame {
 
         jLabel4.setText("Contraseña");
 
-        jButton1.setText("jButton1");
+        ev_correo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ev_correoActionPerformed(evt);
+            }
+        });
+
+        jb_login.setText("Log In");
+        jb_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_loginMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
         jd_login.getContentPane().setLayout(jd_loginLayout);
@@ -80,7 +91,7 @@ public class Correo extends javax.swing.JFrame {
             jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_loginLayout.createSequentialGroup()
                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_login, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jd_loginLayout.createSequentialGroup()
                             .addGap(131, 131, 131)
@@ -92,8 +103,8 @@ public class Correo extends javax.swing.JFrame {
                                 .addComponent(jLabel4))
                             .addGap(39, 39, 39)
                             .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)))))
+                                .addComponent(ev_correo)
+                                .addComponent(ev_contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)))))
                 .addContainerGap(181, Short.MAX_VALUE))
         );
         jd_loginLayout.setVerticalGroup(
@@ -104,13 +115,13 @@ public class Correo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ev_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ev_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_login, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -334,8 +345,8 @@ public class Correo extends javax.swing.JFrame {
             pais=tf_pais.getText();
             telefono=tf_telefono.getText();
             contraseña=pf_contraseña.getText();
+            if(!nombre.equals(null) || !apellido.equals(null) || !correo.equals(null) || !pais.equals(null) || !telefono.equals(null) || !contraseña.equals(null)){
             persona.add(new Persona(nombre,apellido,correo,fechaN,pais,telefono,contraseña));
-            //
             tf_nombre.setText("");
             tf_apellido.setText("");
             tf_correo.setText("");
@@ -343,6 +354,12 @@ public class Correo extends javax.swing.JFrame {
             tf_pais.setText("");
             tf_telefono.setText("");
             pf_contraseña.setText("");
+            JOptionPane.showMessageDialog(this, "Registro Exitosamente");
+            }else{
+                JOptionPane.showMessageDialog(this, "No se guardo la Informacion");
+            }
+            //
+            
         } catch (Exception e) {
         }
     }//GEN-LAST:event_RegistrarMouseClicked
@@ -374,6 +391,23 @@ public class Correo extends javax.swing.JFrame {
         jd_login.setVisible(true);
         jd_login.setLocationRelativeTo(this);
     }//GEN-LAST:event_ji_loginActionPerformed
+
+    private void jb_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_loginMouseClicked
+        String Ecorreo,contraseña;
+        Ecorreo=ev_correo.getText();
+        contraseña=ev_contraseña.getText();
+        for (Persona p :persona ) {
+            if (p.getCorreo().equals(Ecorreo) && p.getContraseña().equals(contraseña)) {
+                login=true;
+            }else{
+                login=false;
+            }
+        }
+    }//GEN-LAST:event_jb_loginMouseClicked
+
+    private void ev_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ev_correoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ev_correoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -422,7 +456,8 @@ public class Correo extends javax.swing.JFrame {
     private javax.swing.JButton CrearCuenta;
     private javax.swing.JButton LogIn;
     private javax.swing.JButton Registrar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPasswordField ev_contraseña;
+    private javax.swing.JTextField ev_correo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -439,8 +474,7 @@ public class Correo extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jb_login;
     private com.toedter.calendar.JDateChooser jc_fecha;
     private javax.swing.JDialog jd_crear;
     private javax.swing.JDialog jd_login;
@@ -456,4 +490,5 @@ public class Correo extends javax.swing.JFrame {
 ArrayList<String> correo=new ArrayList();
 ArrayList<Persona> persona=new ArrayList();
 Administrador ad = new Administrador();
+boolean login=false;
 }
