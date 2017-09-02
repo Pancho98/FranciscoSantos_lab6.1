@@ -504,34 +504,34 @@ public class Correo extends javax.swing.JFrame {
             String contraseña;
             Date fechaN;
             //
-            nombre=tf_nombre.getText();
+            nombre = tf_nombre.getText();
             ad.CrearCarpeta(nombre);
-            apellido=tf_apellido.getText();
-            if (Evaluar(tf_correo.getText())==false) {
+            apellido = tf_apellido.getText();
+            if (Evaluar(tf_correo.getText()) == false) {
                 JOptionPane.showMessageDialog(this, "El Correo ya existe");
-                correo=null;
-            }else{
-                correo=tf_correo.getText();
+                correo = null;
+            } else {
+                correo = tf_correo.getText();
             }
-            fechaN=jc_fecha.getDate();
-            pais=tf_pais.getText();
-            telefono=tf_telefono.getText();
-            contraseña=pf_contraseña.getText();
-            if(!nombre.equals(null) || !apellido.equals(null) || !correo.equals(null) || !pais.equals(null) || !telefono.equals(null) || !contraseña.equals(null)){
-            persona.add(new Persona(nombre,apellido,correo,fechaN,pais,telefono,contraseña));
-            tf_nombre.setText("");
-            tf_apellido.setText("");
-            tf_correo.setText("");
-            jc_fecha.setDate(null);
-            tf_pais.setText("");
-            tf_telefono.setText("");
-            pf_contraseña.setText("");
-            JOptionPane.showMessageDialog(this, "Registro Exitosamente");
-            }else{
+            fechaN = jc_fecha.getDate();
+            pais = tf_pais.getText();
+            telefono = tf_telefono.getText();
+            contraseña = pf_contraseña.getText();
+            if (!nombre.equals(null) || !apellido.equals(null) || !correo.equals(null) || !pais.equals(null) || !telefono.equals(null) || !contraseña.equals(null)) {
+                persona.add(new Persona(nombre, apellido, correo, fechaN, pais, telefono, contraseña));
+                tf_nombre.setText("");
+                tf_apellido.setText("");
+                tf_correo.setText("");
+                jc_fecha.setDate(null);
+                tf_pais.setText("");
+                tf_telefono.setText("");
+                pf_contraseña.setText("");
+                JOptionPane.showMessageDialog(this, "Registro Exitosamente");
+            } else {
                 JOptionPane.showMessageDialog(this, "No se guardo la Informacion");
             }
             //
-            
+
         } catch (Exception e) {
         }
     }//GEN-LAST:event_RegistrarMouseClicked
@@ -565,17 +565,17 @@ public class Correo extends javax.swing.JFrame {
     }//GEN-LAST:event_ji_loginActionPerformed
 
     private void jb_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_loginMouseClicked
-        String Ecorreo,contraseña;
-        Ecorreo=ev_correo.getText();
-        contraseña=ev_contraseña.getText();
-        for (Persona p :persona ) {
+        String Ecorreo, contraseña;
+        Ecorreo = ev_correo.getText();
+        contraseña = ev_contraseña.getText();
+        for (Persona p : persona) {
             if (p.getCorreo().equals(Ecorreo) && p.getContraseña().equals(contraseña)) {
-                login=true;
-            }else{
-                login=false;
+                login = true;
+            } else {
+                login = false;
             }
         }
-        if (login ==true) {
+        if (login == true) {
             jd_buzon.pack();
             jd_buzon.setModal(true);
             jd_buzon.setVisible(true);
@@ -607,29 +607,80 @@ public class Correo extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_modificarMouseEntered
 
     private void jb_modificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modificarMouseClicked
-        String nombre, apellido,correo,pais,telefono,contraseña;
-        Date fechaN;
-        if (tf_nombre1==null ) {
-            
+        String nombre = "", apellido = "", correo = "", pais = "", telefono = "", contraseña = "";
+        Date fechaN = null;
+        if (tf_nombre1 == null) {
+            for (Persona t : persona) {
+                nombre = t.getNombre();
+            }
+        } else {
+            for (Persona t : persona) {
+                nombre = tf_nombre1.getText();
+
+            }
         }
-        if (tf_apellido1==null ) {
-            
+        if (tf_apellido1 == null) {
+            for (Persona t : persona) {
+                apellido = t.getApellido();
+            }
+        } else {
+            for (Persona t : persona) {
+                apellido = tf_apellido1.getText();
+            }
         }
-        if (tf_correo1==null ) {
-            
+        if (tf_correo1 == null) {
+            for (Persona t : persona) {
+                correo = t.getCorreo();
+            }
+        } else {
+            for (Persona t : persona) {
+                correo = tf_correo1.getText();
+            }
         }
-        if (tf_pais1==null ) {
-            
+        if (tf_pais1 == null) {
+            for (Persona t : persona) {
+                pais = t.getPais();
+            }
+        } else {
+            for (Persona t : persona) {
+                pais = tf_pais1.getText();
+            }
         }
-        if (tf_telefono1==null ) {
-            
+        if (tf_telefono1 == null) {
+            for (Persona t : persona) {
+                telefono = t.getTelefono();
+            }
+        } else {
+            for (Persona t : persona) {
+                telefono = tf_telefono1.getText();
+            }
         }
-        if (pf_contraseña1==null ) {
-            
+        if (pf_contraseña1 == null) {
+            for (Persona t : persona) {
+                contraseña = t.getContraseña();
+            }
+        } else {
+            for (Persona t : persona) {
+                contraseña = pf_contraseña1.getText();
+            }
         }
-        if (jc_fecha1==null ) {
-            
+        if (jc_fecha1 == null) {
+            for (Persona t : persona) {
+                fechaN = t.getFechaN();
+            }
+        } else {
+            for (Persona t : persona) {
+                fechaN = jc_fecha1.getDate();
+            }
         }
+        persona.add(new Persona(nombre, apellido, correo, fechaN, pais, telefono, contraseña));
+        tf_nombre1.setText("");
+        tf_apellido1.setText("");
+        tf_correo1.setText("");
+        jc_fecha1.setDate(null);
+        tf_pais1.setText("");
+        tf_telefono1.setText("");
+        pf_contraseña1.setText("");
     }//GEN-LAST:event_jb_modificarMouseClicked
 
     /**
@@ -666,7 +717,8 @@ public class Correo extends javax.swing.JFrame {
             }
         });
     }
-    public boolean Evaluar(String correo){
+
+    public boolean Evaluar(String correo) {
         for (Persona p : persona) {
             if (p.getCorreo().equals(correo)) {
                 return false;
@@ -731,8 +783,8 @@ public class Correo extends javax.swing.JFrame {
     private javax.swing.JTextField tf_telefono;
     private javax.swing.JTextField tf_telefono1;
     // End of variables declaration//GEN-END:variables
-ArrayList<String> correo=new ArrayList();
-ArrayList<Persona> persona=new ArrayList();
-Administrador ad = new Administrador();
-boolean login=false;
+ArrayList<String> correo = new ArrayList();
+    ArrayList<Persona> persona = new ArrayList();
+    Administrador ad = new Administrador();
+    boolean login = false;
 }
